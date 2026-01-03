@@ -36,7 +36,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: LevelRank-${{ steps.version.outputs.VERSION }}
+          name: LevelRank-${{ github.event_name == 'release' && steps.version.outputs.VERSION || github.sha }}
           path: sharp/
 
       - name: Zip Release
