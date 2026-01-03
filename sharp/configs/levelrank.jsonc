@@ -1,0 +1,26 @@
+{
+    "Database": {
+        // supported types: mysql, postgresql, sqlite, case-insensitive.
+        // note: when using sqlite the rest of the fields are ignored except database
+        "Type": "sqlite",
+        "Host": "localhost",
+        "Port": 3306,
+        // when using sqlite, this is the name of the database file, which is loated at sharp/data/{Database}.db
+        "Database": "levelrank",
+        "User": "root",
+        "Password": "YOUR_PASSWORD_HERE"
+    },
+    "Colors": {
+        // available colors:
+        // White, DarkRed, Pink, Green, LightGreen, Lime, Red, Grey,
+        // Yellow, Gold, Silver, Blue, DarkBlue, Purple, LightRed
+        "Prefix": "{Lime}",           // [LevelRank] prefix color
+        "ScoreLabel": "{White}",      // "Score" text color
+        "ScoreValue": "{Gold}",       // score number color
+        "ScoreGain": "{LightGreen}",  // positive score change color (e.g. +3)
+        "ScoreLoss": "{LightRed}",    // negative score change color (e.g. -2)
+        "ActionText": "{Silver}",     // action reason text color (e.g. "Kill", "Death")
+        "Separator": "{Grey}",        // separator and brackets color
+        "Brackets": "{Grey}"          // parentheses color
+    }
+}

@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="LevelRank.RequestManager/LevelRank.Request.Sql.csproj" Id="83d918e1-f590-43da-bbcb-c60a9ee498eb" />
+  <Project Path="LevelRank.Shared/LevelRank.Shared.csproj" Id="838f3e9e-50e3-4791-a528-8a285fb90dd8" />
+  <Project Path="LevelRank/LevelRank.csproj" />
+</Solution>

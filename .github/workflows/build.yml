@@ -1,0 +1,50 @@
+name: Build and Release
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  release:
+    types: [created]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Build
+        run: .\build.bat
+        shell: cmd
+
+      - name: Get Version
+        id: version
+        run: |
+          [xml]$csproj = Get-Content "LevelRank/LevelRank.csproj"
+          $version = $csproj.Project.PropertyGroup.Version
+          echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: LevelRank-${{ steps.version.outputs.VERSION }}
+          path: sharp/
+
+      - name: Zip Release
+        if: github.event_name == 'release'
+        run: Compress-Archive -Path sharp/* -DestinationPath LevelRank-${{ steps.version.outputs.VERSION }}.zip
+
+      - name: Upload Release Asset
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: LevelRank-${{ steps.version.outputs.VERSION }}.zip

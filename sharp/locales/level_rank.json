@@ -1,0 +1,62 @@
+{
+    "LevelRank.TotalScore": {
+        "en-us": "Score",
+        "zh-cn": "总分"
+    },
+    "LevelRank.Kills": {
+        "en-us": "Kills",
+        "zh-cn": "击杀"
+    },
+    "LevelRank.Deaths": {
+        "en-us": "Deaths",
+        "zh-cn": "死亡"
+    },
+    "LevelRank.Assists": {
+        "en-us": "Assists",
+        "zh-cn": "助攻"
+    },
+    "LevelRank.Suicides": {
+        "en-us": "Suicides",
+        "zh-cn": "自杀"
+    },
+    "LevelRank.Headshots": {
+        "en-us": "Headshots",
+        "zh-cn": "爆头"
+    },
+    "LevelRank.KnifeKills": {
+        "en-us": "Knife Kills",
+        "zh-cn": "匕首击杀"
+    },
+    "LevelRank.ZeusKills": {
+        "en-us": "Zeus Kills",
+        "zh-cn": "电击枪击杀"
+    },
+    "LevelRank.UtilitiesKills": {
+        "en-us": "Utilities Kills",
+        "zh-cn": "道具击杀"
+    },
+    "LevelRank.BombPlants": {
+        "en-us": "Bomb Plants",
+        "zh-cn": "下包"
+    },
+    "LevelRank.BombDefuses": {
+        "en-us": "Bomb Defuses",
+        "zh-cn": "拆包"
+    },
+    "LevelRank.HostageRescues": {
+        "en-us": "Hostage Rescues",
+        "zh-cn": "人质救援"
+    },
+    "LevelRank.PreventHostageRescue": {
+        "en-us": "Prevent Hostage Rescue",
+        "zh-cn": "阻止人质救援"
+    },
+    "LevelRank.RoundWins": {
+        "en-us": "Round Wins",
+        "zh-cn": "获胜"
+    },
+    "LevelRank.RoundLosses": {
+        "en-us": "Round Losses",
+        "zh-cn": "败北"
+    }
+}
