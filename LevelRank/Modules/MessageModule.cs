@@ -37,8 +37,17 @@ internal class MessageModule : IModule, IMessageModule
         _logger      = logger;
         _scoreModule = scoreModule;
 
-        _colors = new ColorConfig();
+        _colors = new ();
         configuration.GetSection("Colors").Bind(_colors);
+
+        _colors.Prefix     = _colors.Prefix.RemoveColorPlaceholder();
+        _colors.ScoreLabel = _colors.ScoreLabel.RemoveColorPlaceholder();
+        _colors.ScoreValue = _colors.ScoreValue.RemoveColorPlaceholder();
+        _colors.ScoreGain  = _colors.ScoreGain.RemoveColorPlaceholder();
+        _colors.ScoreLoss  = _colors.ScoreLoss.RemoveColorPlaceholder();
+        _colors.ActionText = _colors.ActionText.RemoveColorPlaceholder();
+        _colors.Separator  = _colors.Separator.RemoveColorPlaceholder();
+        _colors.Brackets   = _colors.Brackets.RemoveColorPlaceholder();
     }
 
     public bool Init()
@@ -115,6 +124,6 @@ internal class MessageModule : IModule, IMessageModule
         sb.Append(_colors.Brackets);
         sb.Append(')');
 
-        controller.Print(HudPrintChannel.SayText2, sb.ToString().RemoveColorPlaceholder());
+        controller.Print(HudPrintChannel.SayText2, sb.ToString());
     }
 }
