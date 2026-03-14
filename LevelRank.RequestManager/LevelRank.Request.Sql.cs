@@ -50,7 +50,8 @@ public class LevelRankRequestManager : IModSharpModule
             "mysql"      => DbType.MySql,
             "postgresql" => DbType.PostgreSQL,
             "sqlite"     => DbType.Sqlite,
-            _            => throw new NotSupportedException($"Database type '{dbTypeStr}' is not supported. Supported types: mysql, postgresql, sqlite"),
+            _ => throw new
+                NotSupportedException($"Database type '{dbTypeStr}' is not supported. Supported types: mysql, postgresql, sqlite"),
         };
 
         var connectionString = dbType switch
