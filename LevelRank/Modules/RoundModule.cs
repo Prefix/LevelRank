@@ -82,7 +82,14 @@ internal class RoundModule : IModule
                 continue;
             }
 
-            var isWinner = pawn.Team == winnerTeam;
+            var team = pawn.Team;
+
+            if (team <= CStrikeTeam.Spectator)
+            {
+                continue;
+            }
+
+            var isWinner = team == winnerTeam;
 
             if (isWinner)
             {
